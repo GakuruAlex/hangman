@@ -85,6 +85,18 @@ def hangman(secretWord):
 
 
 
+def main() -> None:
 
-# secretWord = chooseWord(wordlist).lower()
-# hangman(secretWord)
+    secretWord = chooseWord(wordlist).lower()
+    br = "-------------"
+    hangman(secretWord)
+    num_of_guesses = 8
+    print("Welcome to the game, Hangman!\nI am thinking of a word that is " + len(secretWord)+  "letters long.")
+    print(br)
+    while num_of_guesses > 0:
+        pass
+
+if __name__ == "__main__":
+    main()
+
+
