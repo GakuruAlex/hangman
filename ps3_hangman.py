@@ -102,7 +102,8 @@ def main() -> None:
     #     hangman(secretWord)
     #     num_of_guesses -= 1
     #     print(br)
-    isWordGuessed('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u'])
+    #isWordGuessed('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u'])
+    print(getGuessedWord('apple', ['e', 'i', 'k', 'p', 'r', 's']))
 
 if __name__ == "__main__":
     main()
