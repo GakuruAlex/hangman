@@ -36,8 +36,7 @@ def isWordGuessed(secretWord, lettersGuessed):
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE...
-
+    return all([char in lettersGuessed for char in list(secretWord)])
 
 
 def getGuessedWord(secretWord, lettersGuessed):
@@ -47,8 +46,11 @@ def getGuessedWord(secretWord, lettersGuessed):
     returns: string, comprised of letters and underscores that represents
       what letters in secretWord have been guessed so far.
     '''
-    # FILL IN YOUR CODE HERE...
-
+    working_secret_word = secretWord
+    for letter in working_secret_word:
+        if letter not in lettersGuessed:
+            secretWord = secretWord.replace(letter, "_")
+    return secretWord
 
 
 def getAvailableLetters(lettersGuessed):
@@ -57,8 +59,8 @@ def getAvailableLetters(lettersGuessed):
     returns: string, comprised of letters that represents what letters have not
       yet been guessed.
     '''
-    # FILL IN YOUR CODE HERE...
-    
+    available = "abcdefghijklmnopqrstuvwxyz"
+    return "".join([letter for letter in list(available) if letter not in available])
 
 def hangman(secretWord):
     '''
@@ -80,21 +82,27 @@ def hangman(secretWord):
 
     Follows the other limitations detailed in the problem write-up.
     '''
-    # FILL IN YOUR CODE HERE...
 
 
 
 
 def main() -> None:
 
-    secretWord = chooseWord(wordlist).lower()
-    br = "-------------"
-    hangman(secretWord)
-    num_of_guesses = 8
-    print("Welcome to the game, Hangman!\nI am thinking of a word that is " + len(secretWord)+  "letters long.")
-    print(br)
-    while num_of_guesses > 0:
-        pass
+    # secretWord = chooseWord(wordlist).lower()
+    # print("Secret word is: "+secretWord)
+    # lettersGuessed = []
+    # br = "-------------"
+    # num_of_guesses = 8
+    # print("Welcome to the game, Hangman!\nI am thinking of a word that is " + len(secretWord)+  "letters long.")
+    # print(br)
+    # while num_of_guesses > 0:
+    #     available_letters = getAvailableLetters(lettersGuessed=lettersGuessed)
+    #     print("You have "+num_of_guesses+ "guesses left.")
+    #     print("Available letters: "+available_letters)
+    #     hangman(secretWord)
+    #     num_of_guesses -= 1
+    #     print(br)
+    isWordGuessed('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u'])
 
 if __name__ == "__main__":
     main()
