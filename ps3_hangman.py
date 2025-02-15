@@ -60,7 +60,7 @@ def getAvailableLetters(lettersGuessed):
       yet been guessed.
     '''
     available = "abcdefghijklmnopqrstuvwxyz"
-    return "".join([letter for letter in list(available) if letter not in available])
+    return "".join([letter for letter in list(available) if letter not in lettersGuessed])
 
 def hangman(secretWord):
     '''
